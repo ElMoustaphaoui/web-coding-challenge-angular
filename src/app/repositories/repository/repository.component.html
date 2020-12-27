@@ -1,17 +1,19 @@
 
-<div class="card col-lg-8 ">
+<div class="card col-lg-12 col-lg-10 col-lg-8 col-lg-5 ">
     <div class="row no-gutters">
         <div class="col-sm-3" style="background: #868e96;">
-            <img src="https://avatars0.githubusercontent.com/u/46606940?s=460&u=9b36c8579b0d278c37c7fc4c38b042c8cbe8fe45&v=4" class="card-img-top h-100" alt="...">
+            <img loading="lazy" src="{{repo.owner.avatar_url}}" class="card-img-top h-100" alt="Max-width 100%">
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-7 carddetail">
             <div class="card-body">
-                <h5 class="card-title">Alice Liddel</h5>
-                <p class="card-text">Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+                <h5 class="card-title">{{repo.name}}</h5>
+                <!-- component  -->
+                <app-read-more [descriptionRepo]="descriptionRepo" maxLength="40"></app-read-more>
                 <br>
                 <div class="container">
-                    <div><a href="" class="btn btn-primary stretched-link" ><span> 12K </span>Stars</a></div>
-                    <div> <a href="" class="btn btn-primary stretched-link" ><span> 12K </span>Stars</a></div>
+                    <div><a  class="btn btn-primary " ><span>{{repo.stargazers_count}} </span>Stars</a></div>
+                    <div> <a  class="btn btn-primary " ><span> {{repo.open_issues }} </span>Issues</a></div>
+                    <!-- we need to change this once i get the meaning of the field ! -->
                     <div> <a>Lorem ipsum dolor sit amet consectetur</a></div>
                 </div>
                 
@@ -19,3 +21,4 @@
         </div>
     </div>
 </div>
+

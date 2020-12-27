@@ -9,6 +9,9 @@ import { FooterComponent } from './core/footer/footer.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { RepositoryComponent } from './repositories/repository/repository.component';
 import { RepositoriesListComponent } from './repositories/repositories-list/repositories-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReadMoreComponent} from '../app/core/read-more/read-more.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { RepositoriesListComponent } from './repositories/repositories-list/repo
     FooterComponent,
     PageNotFoundComponent,
     RepositoryComponent,
-    RepositoriesListComponent
+    RepositoriesListComponent,
+    ReadMoreComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
