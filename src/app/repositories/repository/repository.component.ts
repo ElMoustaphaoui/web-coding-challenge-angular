@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-repository',
   templateUrl: './repository.component.html',
@@ -8,10 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RepositoryComponent implements OnInit {
   @Input() repo: any;
-
-  constructor( ) { }
-
+  descriptionRepo:String;
+  constructor( ) {}
   ngOnInit() {
+    this.descriptionRepo=this.repo.description;
   }
 
 }

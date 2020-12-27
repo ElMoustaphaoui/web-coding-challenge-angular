@@ -1,17 +1,19 @@
 
-<div class="card col-lg-8 ">
+<div class="card col-lg-12 col-lg-10 col-lg-8 col-lg-5 ">
     <div class="row no-gutters">
         <div class="col-sm-3" style="background: #868e96;">
-            <img src="{{repo.owner.avatar_url}}" class="card-img-top h-100" alt="...">
+            <img loading="lazy" src="{{repo.owner.avatar_url}}" class="card-img-top h-100" alt="Max-width 100%">
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-7 carddetail">
             <div class="card-body">
                 <h5 class="card-title">{{repo.name}}</h5>
-                <p class="card-text">{{repo.description}}</p>
+                <!-- component  -->
+                <app-read-more [descriptionRepo]="descriptionRepo" maxLength="40"></app-read-more>
                 <br>
                 <div class="container">
-                    <div><a href=""  class="btn btn-primary stretched-link" ><span>{{repo.stargazers_count}} </span>Stars</a></div>
-                    <div> <a href="" class="btn btn-primary stretched-link" ><span> {{repo.open_issues }} </span>Issues</a></div>
+                    <div><a  class="btn btn-primary " ><span>{{repo.stargazers_count}} </span>Stars</a></div>
+                    <div> <a  class="btn btn-primary " ><span> {{repo.open_issues }} </span>Issues</a></div>
+                    <!-- we need to change this once i get the meaning of the field ! -->
                     <div> <a>Lorem ipsum dolor sit amet consectetur</a></div>
                 </div>
                 

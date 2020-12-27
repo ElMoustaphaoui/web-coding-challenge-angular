@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { RepositoryComponent } from './repositories/repository/repository.component';
 import { RepositoriesListComponent } from './repositories/repositories-list/repositories-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReadMoreComponent} from '../app/core/read-more/read-more.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     PageNotFoundComponent,
     RepositoryComponent,
-    RepositoriesListComponent
+    RepositoriesListComponent,
+    ReadMoreComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

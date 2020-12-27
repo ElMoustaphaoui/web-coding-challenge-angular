@@ -1,0 +1,6 @@
+<p class="see-more">
+    {{ seeMore ? descriptionRepo : descriptionRepo?.substr(0, max)   }}
+    <ng-container *ngIf="descriptionRepo?.length > max">...
+        <a class="text-primary" (click)="seeMore = !seeMore;">See {{ seeMore ? 'less' : 'more'}}</a>
+    </ng-container>
+</p>
