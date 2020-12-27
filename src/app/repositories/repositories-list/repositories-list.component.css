@@ -1,1 +1,13 @@
 
+.repo-list{
+    justify-content: center;
+}
+.project{
+    display: flex;
+    width: 600px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    
+
+}

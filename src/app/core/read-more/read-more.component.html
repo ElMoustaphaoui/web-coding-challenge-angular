@@ -3,4 +3,8 @@
     <ng-container *ngIf="descriptionRepo?.length > max">...
         <a class="text-primary" (click)="seeMore = !seeMore;">See {{ seeMore ? 'less' : 'more'}}</a>
     </ng-container>
+    <!-- just for those ho don't put description for repo -->
+    <ng-container *ngIf="descriptionRepo?.length==0 > max">
+        <br>
+    </ng-container>
 </p>
