@@ -15,6 +15,17 @@ export class RepositoriesListComponent implements OnInit {
 
   //config magination
   config: any;
+  public maxSize: number = 7;
+  public directionLinks: boolean = true;
+  public autoHide: boolean = false;
+  public responsive: boolean = true;
+  public labels: any = {
+      previousLabel: '<--',
+      nextLabel: '-->',
+      screenReaderPaginationLabel: 'Pagination',
+      screenReaderPageLabel: 'page',
+      screenReaderCurrentLabel: `You're on page`
+  };
   
   constructor(private repoRestService: RepoRestService) {
 
