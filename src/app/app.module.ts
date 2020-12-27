@@ -9,6 +9,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { RepositoryComponent } from './repositories/repository/repository.component';
 import { RepositoriesListComponent } from './repositories/repositories-list/repositories-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RepositoriesListComponent } from './repositories/repositories-list/repo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

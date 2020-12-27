@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RepoRestServiceService } from './repo-rest-service.service';
+import { RepoRestService } from './repo-repo-rest.service';
 
 describe('RepoRestServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RepoRestServiceService = TestBed.get(RepoRestServiceService);
+    const service: RepoRestService = TestBed.get(RepoRestService);
     expect(service).toBeTruthy();
   });
 });
