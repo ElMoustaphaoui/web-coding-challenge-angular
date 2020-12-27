@@ -4,10 +4,12 @@
     <div class="py-5">
 
         <div class="repo-list d-flex flex-wrap fadeIn animated">
-            <div class="project" *ngFor="let repo of repositories">
+            <div class="project" *ngFor="let repo of repositories | paginate: config ">
               <app-repository [repo]="repo" ></app-repository>
             </div>
         </div>
+
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
         
          
       <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center" style="margin-top: 200px">

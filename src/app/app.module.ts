@@ -11,6 +11,7 @@ import { RepositoryComponent } from './repositories/repository/repository.compon
 import { RepositoriesListComponent } from './repositories/repositories-list/repositories-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReadMoreComponent} from '../app/core/read-more/read-more.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ReadMoreComponent} from '../app/core/read-more/read-more.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
