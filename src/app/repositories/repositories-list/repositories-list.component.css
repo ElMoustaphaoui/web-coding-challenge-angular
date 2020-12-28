@@ -4,7 +4,8 @@
 }
 .project{
     display: flex;
-    width: 600px;
+    width: 700px;
+    height: 200;
     position: relative;
     align-items: center;
     justify-content: center;
