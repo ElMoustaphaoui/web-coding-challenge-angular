@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import {RepoRestService } from '../../services/repo-repo-rest.service'
+import { Repository} from '../models/repository.model';
 
 @Component({
   selector: 'app-repositories-list',
@@ -9,7 +10,7 @@ import {RepoRestService } from '../../services/repo-repo-rest.service'
 })
 export class RepositoriesListComponent implements OnInit {
 
-  repositories: Observable<any[] | null>;
+  repositories: Repository[] | null;
   isLoading: boolean;
   number_of_pages:number;
 
@@ -52,7 +53,8 @@ export class RepositoriesListComponent implements OnInit {
     this.isLoading =true;
     //calling the github api 
     this.repoRestService.getreposPage(page).subscribe((data:any) =>{
-
+          
+          this.repositories=data;
           // get the number of pages 
           this.config.totalItems=data.total_count;
           // passing the repo data to UI
@@ -87,7 +89,4 @@ export class RepositoriesListComponent implements OnInit {
         })
   }
  
-
-
-
 }

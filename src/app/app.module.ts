@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReadMoreComponent} from '../app/core/read-more/read-more.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+import { environment } from '../environments/environment.prod';
+
 @NgModule({
   declarations: [
     AppComponent,
