@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription} from 'rxjs';
 import {RepoRestService } from '../../services/repo-repo-rest.service'
 import { Repository} from '../models/repository.model';
 
@@ -13,6 +13,9 @@ export class RepositoriesListComponent implements OnInit {
   repositories: Repository[] | null;
   isLoading: boolean;
   number_of_pages:number;
+
+  reposinit: Subscription;
+  reposPage: Subscription;
 
   //config magination
   config: any;
@@ -52,7 +55,7 @@ export class RepositoriesListComponent implements OnInit {
     //waiting the api response
     this.isLoading =true;
     //calling the github api 
-    this.repoRestService.getreposPage(page).subscribe((data:any) =>{
+    this.reposPage=this.repoRestService.getreposPage(page).subscribe((data:any) =>{
           
           this.repositories=data;
           // get the number of pages 
@@ -69,12 +72,11 @@ export class RepositoriesListComponent implements OnInit {
 }
 
 
-
   fetchRepos(): void {
         //waiting the api response
         this.isLoading =true;
         //calling the github api 
-        this.repoRestService.getreposInit().subscribe((data:any) =>{
+        this.reposinit=this.repoRestService.getreposInit().subscribe((data:any) =>{
     
               // get the number of pages 
               this.config.totalItems=data.total_count;
@@ -87,6 +89,13 @@ export class RepositoriesListComponent implements OnInit {
         err =>{
               console.log(" erreur while get repos data : " + err);
         })
+  }
+
+  ngOnDestroy() {
+    //Good habit are always good 
+    this.reposPage.unsubscribe();
+    this.reposinit.unsubscribe();
+   
   }
  
 }
