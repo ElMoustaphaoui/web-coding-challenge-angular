@@ -13,10 +13,8 @@ export class RepositoriesListComponent implements OnInit {
   repositories: Repository[] | null;
   isLoading: boolean;
   number_of_pages:number;
-
   reposinit: Subscription;
   reposPage: Subscription;
-
   //config magination
   config: any;
   public maxSize: number = 7;
@@ -30,19 +28,14 @@ export class RepositoriesListComponent implements OnInit {
       screenReaderPageLabel: 'page',
       screenReaderCurrentLabel: `You're on page`
   };
-  
   constructor(private repoRestService: RepoRestService) {
 
        this.config = {
           itemsPerPage: 10,
-          currentPage: 1,
-        
+          currentPage: 1, 
     };
   }
-
-  ngOnInit() {
-    this.fetchRepos();   
-  }
+  ngOnInit() {this.fetchRepos();}
 
   pageChanged(event){
     this.isLoading =true; 

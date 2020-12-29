@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './core/main/main.component';
@@ -12,8 +11,6 @@ import { RepositoriesListComponent } from './repositories/repositories-list/repo
 import { HttpClientModule } from '@angular/common/http';
 import { ReadMoreComponent} from '../app/core/read-more/read-more.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
-import { environment } from '../environments/environment.prod';
 
 @NgModule({
   declarations: [

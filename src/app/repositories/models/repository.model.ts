@@ -1,8 +1,8 @@
 export interface Repository {
     name?: any;
-    avatar_url?: string;
+    avatar?: string;
     description?: string;
-    stargazers_count?: string;
-    open_issues?: string;
+    stars?: string;
+    issues?: string;
   }
   
