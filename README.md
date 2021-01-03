@@ -1,8 +1,8 @@
 # Idea of the App (GithubApp)
 
-The task is to implement a small webapp that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API, maybe we will try Github GraphQL API in the futur .
+The task is to implement a small webapp that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API, maybe we will try Github GraphQL API in the futur.
 
-# Some some screenshots for the app :
+# Some screenshots for the app :
 Desktop (> 1450px) :
 
 <img width="752" alt="ScoreKeeper" src="https://user-images.githubusercontent.com/46606940/103319553-284aba80-4a2a-11eb-9b5a-cff172757522.JPG">
