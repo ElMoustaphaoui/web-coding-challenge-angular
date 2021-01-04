@@ -88,7 +88,8 @@ export class RepositoriesListComponent implements OnInit {
               // passing the repo data to UI
               this.repositories=data.items;
               //now once the we get data from api we make loading down
-              this.isLoading =false;         
+              this.isLoading =false;     
+            
         
         },
         err =>{
