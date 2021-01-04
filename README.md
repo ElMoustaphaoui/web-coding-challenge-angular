@@ -5,18 +5,15 @@ The task is to implement a small webapp that will list the most starred Github r
 # Some screenshots for the app :
 Desktop (> 1450px) :
 
-<img width="752" alt="ScoreKeeper" src="https://user-images.githubusercontent.com/46606940/103319553-284aba80-4a2a-11eb-9b5a-cff172757522.JPG">
+<img width="752" alt="ScoreKeeper" src="https://user-images.githubusercontent.com/46606940/103523429-bcc27c00-4e73-11eb-82e3-c993e0ba07b8.JPG">
 
 Desktop/Tablette(between 1450px and 575px) :
 
-<img width="700" alt="ScoreKeeper" src="https://user-images.githubusercontent.com/46606940/103319712-af982e00-4a2a-11eb-8dbc-e41899137d34.JPG">
+<img width="700" alt="ScoreKeeper" src="https://user-images.githubusercontent.com/46606940/103523649-175bd800-4e74-11eb-9552-eff7361ee7d5.JPG">
 
 Mobile:
 
-<img width="200" alt="ScoreKeeper" src="https://user-images.githubusercontent.com/46606940/103319774-dd7d7280-4a2a-11eb-8824-037a886d0373.JPG">
-
-
-
+<img width="200" alt="ScoreKeeper" src="https://user-images.githubusercontent.com/46606940/103523680-29d61180-4e74-11eb-8e39-6ce9c144e9f7.JPG">
 
 # Features
 - As a User I should be able to list the most starred Github repos that were created in the last 30 days.
