@@ -13,3 +13,6 @@
 .pagination{
     justify-content: center;
 }
+.pagination /deep/ .ngx-pagination .current {
+    background: rgb(3, 95, 214);
+  }

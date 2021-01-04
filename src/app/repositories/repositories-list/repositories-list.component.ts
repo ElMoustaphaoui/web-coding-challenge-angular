@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import {RepoRestService } from '../../services/repo-repo-rest.service'
+import { RepoRestService } from '../../services/repo-repo-rest.service'
 import { Repository} from '../models/repository.model';
 
 @Component({
@@ -23,8 +23,8 @@ export class RepositoriesListComponent implements OnInit {
   public autoHide: boolean = false;
   public responsive: boolean = true;
   public labels: any = {
-      previousLabel: '<--',
-      nextLabel: '-->',
+      previousLabel: 'Previous',
+      nextLabel: 'Next',
       screenReaderPaginationLabel: 'Pagination',
       screenReaderPageLabel: 'page',
       screenReaderCurrentLabel: `You're on page`

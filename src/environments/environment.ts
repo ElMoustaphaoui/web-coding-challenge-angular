@@ -4,7 +4,8 @@
 
 export const environment = {
   production: true,
-  githubRestUrl:'https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&per_page=10'
+  //We need just de get most starred Github repos created in the last 30 days
+  githubRestUrl:'https://api.github.com/search/repositories?q=created:>2017-10-22&q=created:<2017-11-22&sort=stars&order=desc&per_page=10'
 };
 
 /*
