@@ -24,7 +24,7 @@ Mobile:
     * Number of stars for the repo.
     * Number of issues for the repo.
     * Username and avatar of the owner.
-- As a User I should be able to keep scrolling and new results should appear  ([Source idea](https://github.com/gemography/frontend-coding-challenge)).
+- As a User I should be able to keep scrolling and new results should appear.
 
 # GithubApp
 
