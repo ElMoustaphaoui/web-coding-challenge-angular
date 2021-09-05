@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Repository} from '../repositories/models/repository.model';
+import { Repository } from '../repositories/models/repository.model';
 
 
 @Injectable({
@@ -16,12 +15,12 @@ export class RepoRestService {
 
   // i had limited the row to 10 per page
   //get the date from github rest api for the first time
-  getreposInit(){
-    return this.http.get<Repository[]>(`${this.url}`+`&pag=`+`${1}`);
+  getreposInit() {
+    return this.http.get<Repository[]>(`${this.url}` + `&pag=` + `${1}`);
   }
   //get date for specifique page
-  getreposPage(page:number) {
-    return this.http.get<Repository[]>(`${this.url}`+`&pag=`+`${page}`);
+  getreposPage(page: number) {
+    return this.http.get<Repository[]>(`${this.url}` + `&pag=` + `${page}`);
   }
 
 }

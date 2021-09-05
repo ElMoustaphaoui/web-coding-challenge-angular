@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RepoRestService } from '../../services/repo-repo-rest.service'
-import { Repository} from '../models/repository.model';
+import { Repository } from '../models/repository.model';
 
 @Component({
   selector: 'app-repositories-list',
@@ -13,8 +13,7 @@ export class RepositoriesListComponent implements OnInit {
   repositories: Repository[] | null;
   isLoading: boolean;
   erreurLoading: boolean;
-  number_of_pages:number;
-  reposinit: Subscription;
+  reposInit: Subscription;
   reposPage: Subscription;
   //config magination
   config: any;
@@ -23,93 +22,93 @@ export class RepositoriesListComponent implements OnInit {
   public autoHide: boolean = false;
   public responsive: boolean = true;
   public labels: any = {
-      previousLabel: 'Previous',
-      nextLabel: 'Next',
-      screenReaderPaginationLabel: 'Pagination',
-      screenReaderPageLabel: 'page',
-      screenReaderCurrentLabel: `You're on page`
+    previousLabel: 'Previous',
+    nextLabel: 'Next',
+    screenReaderPaginationLabel: 'Pagination',
+    screenReaderPageLabel: 'page',
+    screenReaderCurrentLabel: `You're on page`
   };
   constructor(private repoRestService: RepoRestService) {
 
-       //The first pagination config
-       this.config = {
-          itemsPerPage: 10,
-          currentPage: 1, 
+    //The first pagination config
+    this.config = {
+      itemsPerPage: 10,
+      currentPage: 1,
     };
   }
-  ngOnInit() {this.fetchRepos();}
+  ngOnInit() { this.fetchRepos(); }
 
-  pageChanged(event){
-    this.isLoading =true; 
+  pageChanged(event) {
+    this.isLoading = true;
     this.config.currentPage = event;
     //get date of next page
     this.fetchReposPage(event);
   }
 
-  fetchReposPage(page:number): void {
+  fetchReposPage(page: number): void {
 
     //waiting the api response
-    this.isLoading =true;
-    this.erreurLoading=false;
+    this.isLoading = true;
+    this.erreurLoading = false;
     //calling the github api 
-    this.reposPage=this.repoRestService.getreposPage(page).subscribe((data:any) =>{
-          
-          this.repositories=data;
-          // get the number of pages 
-          this.config.totalItems=data.total_count;
-          // passing the repo data to UI
-          this.repositories=data.items;
-          //now once the we get data from api we make loading down
-          this.isLoading =false;         
-    
+    this.reposPage = this.repoRestService.getreposPage(page).subscribe((data: any) => {
+
+      this.repositories = data;
+      // get the number of pages 
+      this.config.totalItems = data.total_count;
+      // passing the repo data to UI
+      this.repositories = data.items;
+      //now once the we get data from api we make loading down
+      this.isLoading = false;
+
     },
-    err =>{
-          //We need to show erreur in case serveur down or no internet connection
-          this.erreurLoading=true;
-          console.log(" erreur while get repos data of next page : " + err);
-          //If we don"t get data from server we stop loading : we show erreur !
-          this.isLoading =false; 
-          this.handleError('500 SERVER ERROR, CONTACT ADMINISTRATOR !')
-          
-    })
-}
+      err => {
+        //We need to show erreur in case serveur down or no internet connection
+        this.erreurLoading = true;
+        console.log(" erreur while get repos data of next page : " + err);
+        //If we don"t get data from server we stop loading : we show erreur !
+        this.isLoading = false;
+        this.handleError('500 SERVER ERROR, CONTACT ADMINISTRATOR !')
+
+      })
+  }
 
 
   fetchRepos(): void {
 
-        //waiting the api response
-        this.isLoading =true;
-        this.erreurLoading=false;
-        //calling the github api 
-        this.reposinit=this.repoRestService.getreposInit().subscribe((data:any) =>{
-    
-              // get the number of pages 
-              this.config.totalItems=data.total_count;
-              // passing the repo data to UI
-              this.repositories=data.items;
-              //now once the we get data from api we make loading down
-              this.isLoading =false;     
-            
-        
-        },
-        err =>{
-              console.log(" erreur while get repos data : " + err);
-              //If we don"t get data from server we stop loading : we show erreur !
-              this.isLoading =false; 
-              this.handleError('500 SERVER ERROR, CONTACT ADMINISTRATOR !')
-        })
+    //waiting the api response
+    this.isLoading = true;
+    this.erreurLoading = false;
+    //calling the github api 
+    this.reposInit = this.repoRestService.getreposInit().subscribe((data: any) => {
+
+      // get the number of pages 
+      this.config.totalItems = data.total_count;
+      // passing the repo data to UI
+      this.repositories = data.items;
+      //now once the we get data from api we make loading down
+      this.isLoading = false;
+
+
+    },
+      err => {
+        console.log(" erreur while get repos data : " + err);
+        //If we don"t get data from server we stop loading : we show erreur !
+        this.isLoading = false;
+        this.handleError('500 SERVER ERROR, CONTACT ADMINISTRATOR !')
+      })
   }
   //Take care of some erreur 
-  handleError (err) {
+  handleError(err) {
     alert(err);
   }
-  
+
 
   ngOnDestroy() {
     //Good habit are always good 
     this.reposPage.unsubscribe();
-    this.reposinit.unsubscribe();
-   
+    this.reposInit.unsubscribe();
+
   }
- 
+
 }
